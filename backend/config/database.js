@@ -1,5 +1,6 @@
-//backend/config/database.js
+// backend/config/database.js
 const config = require('./index');
+
 module.exports = {
   development: {
     storage: config.dbFile,
