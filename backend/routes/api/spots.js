@@ -184,18 +184,37 @@ router.get('/', async (req, res) => {
             offset: size * (page - 1)
         });
 
-        return res.json({
-            Spots: spots,
-            page,
-            size
-        });
+ // Format the spots to ensure numeric values
+ const formattedSpots = spots.map(spot => ({
+    id: spot.id,
+    ownerId: spot.ownerId,
+    address: spot.address,
+    city: spot.city,
+    state: spot.state,
+    country: spot.country,
+    lat: parseFloat(spot.lat),
+    lng: parseFloat(spot.lng),
+    name: spot.name,
+    description: spot.description,
+    price: parseFloat(spot.price),
+    createdAt: spot.createdAt,
+    updatedAt: spot.updatedAt,
+    previewImage: spot.previewImage,
+    avgRating: spot.avgRating ? parseFloat(spot.avgRating) : null
+}));
 
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({
-            message: "An error occurred while retrieving spots",
-        });
-    }
+return res.json({
+    Spots: formattedSpots,
+    page,
+    size
+});
+
+} catch (error) {
+console.error(error);
+return res.status(500).json({
+    message: "An error occurred while retrieving spots",
+});
+}
 });
 
 

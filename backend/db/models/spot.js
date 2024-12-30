@@ -89,28 +89,31 @@ module.exports = (sequelize, DataTypes) => {
     },
   
     lat: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(10, 7),
       allowNull: false,
       validate: {
-        isWithinRange(value) {
-          if (value < -90 || value > 90) {
-            throw new Error('Latitude must be within -90 and 90');
-          }
-        }
+          isDecimal: true,
+          min: -90,
+          max: 90
+      },
+      get() {
+          const value = this.getDataValue('lat');
+          return value === null ? null : parseFloat(value);
       }
-    },
-  
-    lng: {
-      type: DataTypes.DECIMAL,
-      allowNull: false, 
+  },
+  lng: {
+      type: DataTypes.DECIMAL(10, 7),
+      allowNull: false,
       validate: {
-        isWithinRange(value) {
-          if (value < -180 || value > 180) {
-            throw new Error('Longitude must be within -180 and 180');
-          }
-        }
+          isDecimal: true,
+          min: -180,
+          max: 180
+      },
+      get() {
+          const value = this.getDataValue('lng');
+          return value === null ? null : parseFloat(value);
       }
-    },
+  },
   
     name: {
       type: DataTypes.STRING,
