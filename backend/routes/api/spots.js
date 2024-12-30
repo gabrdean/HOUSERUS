@@ -288,26 +288,44 @@ router.post('/', requireAuth, validateSpotCreation, async (req, res) => {
   });
   
   
-//GET THE SPOTS OF THE CURRENT USER
-router.get('/current', requireAuth, async (req, res) => {
+  router.get('/current', requireAuth, async (req, res) => {
     try {
-      const currentUserId = req.user.id; 
-      
-      const spots = await Spot.findAll({
-        where: { ownerId: currentUserId },
-        raw: true
-      });
-  
-      if (!spots.length) {
-        return res.status(404).json({ message: "No spots found." });
-      }
-  
-      return res.json({Spots: spots});
+        const currentUserId = req.user.id;
+        
+        const spots = await Spot.findAll({
+            where: { ownerId: currentUserId },
+            raw: true
+        });
+
+        // Format the spots to ensure numeric values
+        const formattedSpots = spots.map(spot => ({
+            id: spot.id,
+            ownerId: spot.ownerId,
+            address: spot.address,
+            city: spot.city,
+            state: spot.state,
+            country: spot.country,
+            lat: parseFloat(spot.lat),
+            lng: parseFloat(spot.lng),
+            name: spot.name,
+            description: spot.description,
+            price: parseFloat(spot.price),
+            createdAt: spot.createdAt,
+            updatedAt: spot.updatedAt,
+            previewImage: spot.previewImage,
+            avgRating: spot.avgRating ? parseFloat(spot.avgRating) : null
+        }));
+
+        if (!formattedSpots.length) {
+            return res.status(404).json({ message: "No spots found." });
+        }
+
+        return res.json({ Spots: formattedSpots });
     } catch (err) {
-      console.error(err);
-      return res.status(500).json({ message: 'Server Error' });
+        console.error(err);
+        return res.status(500).json({ message: 'Server Error' });
     }
-  });
+});
 
  
  //GET A SPOT BY ITS SPOTiD
