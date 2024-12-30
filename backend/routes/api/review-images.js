@@ -37,7 +37,7 @@ router.delete('/:imageId', requireAuth, async (req, res) => {
 
     } catch (error) {
         console.error(error);
-        // Return 403 for authorization errors, 500 for other errors
+        // Return 403 for authorization err, 500 for other err
         if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeForeignKeyConstraintError') {
             return res.status(403).json({
                 message: "Forbidden"

@@ -11,27 +11,27 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await SpotImage.bulkCreate([
       {
-        spotId: 1, // References Demo Spot 1
+        spotId: 1, 
         url: "https://example.com/spot1-image1.jpg",
         preview: true
       },
       {
-        spotId: 1, // Another image for Demo Spot 1
+        spotId: 1,
         url: "https://example.com/spot1-image2.jpg",
         preview: false
       },
       {
-        spotId: 2, // References Fake Spot 2
+        spotId: 2, 
         url: "https://example.com/spot2-image1.jpg",
         preview: true
       },
       {
-        spotId: 3, // References Sample Spot 3
+        spotId: 3, 
         url: "https://example.com/spot3-image1.jpg",
         preview: true
       },
       {
-        spotId: 3, // Another image for Sample Spot 3
+        spotId: 3, 
         url: "https://example.com/spot3-image2.jpg",
         preview: false
       }
