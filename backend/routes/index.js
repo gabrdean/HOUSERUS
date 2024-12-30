@@ -7,7 +7,10 @@ router.use('/api', apiRouter);
 
 
 
-
+router.use('/spots', (req, res, next) => {
+  req.url = `/api/spots${req.url}`;
+  next('route');
+});
 
 
 // Add a XSRF-TOKEN cookie
