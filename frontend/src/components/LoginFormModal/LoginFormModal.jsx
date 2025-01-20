@@ -11,6 +11,9 @@ function LoginFormModal() {
   const [errors, setErrors] = useState({});
   const { closeModal } = useModal();
 
+  // Add validation check
+  const isFormValid = credential.length >= 4 && password.length >= 6;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors({});
@@ -22,6 +25,11 @@ function LoginFormModal() {
           setErrors(data.errors);
         }
       });
+  };
+
+  const handleDemoLogin = () => {
+    setCredential("shelly");
+    setPassword("password");
   };
 
   return (
@@ -47,9 +55,22 @@ function LoginFormModal() {
           />
         </label>
         {errors.credential && (
-          <p>{errors.credential}</p>
+          <p className="error">{errors.credential}</p>
         )}
-        <button type="submit">Log In</button>
+        <button 
+          type="submit"
+          disabled={!isFormValid}
+          className="form-button"
+        >
+          Log In
+        </button>
+        <button 
+          type="button" 
+          onClick={handleDemoLogin}
+          className="demo-user"
+        >
+          Log in as Demo User
+        </button>
       </form>
     </>
   );
