@@ -1,4 +1,15 @@
 module.exports = {
+
+  overrides: [
+    {
+      files: [
+        "src/context/*.jsx"
+      ],
+      rules: {
+        'react-refresh/only-export-components': 'off'
+      }
+    }
+   ],
   root: true,
   env: { browser: true, es2020: true, node: true },
   extends: [
@@ -18,4 +29,6 @@ module.exports = {
     ],
     'react/prop-types': 'off'
   },
+
+
 }
