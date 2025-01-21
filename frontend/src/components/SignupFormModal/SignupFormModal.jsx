@@ -40,31 +40,31 @@ function SignupFormModal() {
              validPassword;
     };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (password === confirmPassword) {
-      setErrors({});
-      return dispatch(
-        sessionActions.signup({
-          email,
-          username,
-          firstName,
-          lastName,
-          password
-        })
-      )
-        .then(closeModal)
-        .catch(async (res) => {
-          const data = await res.json();
-          if (data?.errors) {
-            setErrors(data.errors);
-          }
-        });
-    }
-    return setErrors({
-      confirmPassword: "Passwords do not match"
-    });
-  };
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if (password === confirmPassword) {
+        setErrors({});
+        return dispatch(
+          sessionActions.signup({
+            email,
+            username,
+            firstName,
+            lastName,
+            password
+          })
+        )
+          .then(closeModal)
+          .catch(async (error) => {
+            // The errors are now directly available
+            if (error.errors) {
+              setErrors(error.errors);
+            }
+          });
+      }
+      return setErrors({
+        confirmPassword: "Confirm Password field must be the same as the Password field"
+      });
+    };
 
   return (
     <>

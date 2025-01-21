@@ -1,0 +1,181 @@
+/* Container styles */
+.spots-container {
+    max-width: 1200px;
+    margin: 0 auto;
+ 
+  }
+  
+  .spots-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 24px;
+  }
+  
+  /* Loading state */
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 20px;
+    color: #666;
+  }
+  
+  /* Grid layout */
+  .spots-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    padding: 16px;
+   /* justify-items: center;  Centers items horizontally in their grid cells */
+    /*align-items: center;  */
+  }
+  
+  /* Responsive grid */
+  @media (min-width: 640px) {
+    .spots-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .spots-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .spots-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* Spot card styles */
+  .spot-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;  /* Make link block-level */
+    width: 100%;   
+  }
+  
+ 
+  .spot-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+
+  .spot-card {
+    position: relative;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+    width: 100%;
+    height: 300px;  /* Add fixed height - adjust this value as needed */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  /* Image container */
+  .spot-image-container {
+    flex: 2; 
+    position: relative;
+    padding-top: 66.67%; 
+  
+  }
+  
+  .spot-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  /* Add this to ensure images maintain aspect ratio */
+    overflow: hidden;
+  }
+
+  /* Content area */
+  .spot-content {
+    padding: 12px;  /* Slightly reduce padding if needed */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tooltip{
+    position: relative;
+}
+
+  /* Tooltip styles */
+.spot-tooltiptext {
+    
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s ease-in
+  
+  }
+  
+  .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+  }
+
+
+/* Show tooltip on hover */
+.spot-card:hover .spot-tooltiptext {
+    
+    visibility: visible;
+    opacity: .7;
+  }
+  .spot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  
+  .spot-name {
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80%;
+  }
+  
+  .spot-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+  }
+  
+  .spot-location {
+    color: #666;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .spot-price {
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .spot-price span:first-child {
+    font-size: 1.125rem;
+  }
+  
+  .price-night {
+    color: #666;
+    font-size: 0.875rem;
+  }
