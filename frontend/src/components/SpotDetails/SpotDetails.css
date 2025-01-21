@@ -101,14 +101,9 @@
   }
   
   /* Host Section */
-  .host-info {
-   
-    padding-bottom: 24px;
-    border-bottom: 1px solid #dddddd;
-    margin-bottom: 24px;
-  }
+
   
-  .host-info h2 {
+  .host-info {
     text-align: left;
     font-size: 32px;
     font-weight: 600;

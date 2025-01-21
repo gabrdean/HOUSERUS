@@ -16,9 +16,14 @@ module.exports = {
         preview: true
       },
       {
-        spotId: 1,
-        url: "https://example.com/spot1-image2.jpg",
+        spotId: 1, 
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Lovell_Beach_House_photo_D_Ramey_Logan.jpg/1200px-Lovell_Beach_House_photo_D_Ramey_Logan.jpg",
         preview: false
+      },
+      {
+        spotId: 5,
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Lima_Beach_House.jpg/1200px-Lima_Beach_House.jpg",
+        preview: true
       },
       {
         spotId: 2, 
@@ -31,10 +36,26 @@ module.exports = {
         preview: true
       },
       {
-        spotId: 3, 
-        url: "https://example.com/spot3-image2.jpg",
-        preview: false
+        spotId: 4, 
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Cingh-house.jpg/1200px-Cingh-house.jpg",
+        preview: true
+      },
+      {
+        spotId: 6, 
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/House_in_Bhutan_02.jpg/1200px-House_in_Bhutan_02.jpg",
+        preview: true
+      },
+      {
+        spotId: 7, 
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Bureg%C3%A5rden_October_2013_03.jpg/1200px-Bureg%C3%A5rden_October_2013_03.jpg",
+        preview: true
+      },
+      {
+        spotId: 8, 
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Feldbrunnen_Baselstrasse-2.jpg/1200px-Feldbrunnen_Baselstrasse-2.jpg",
+        preview: true
       }
+
     ], { validate: true });
   },
 
@@ -42,7 +63,7 @@ module.exports = {
     options.tableName = 'SpotImages';
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete(options, {
-      spotId: { [Op.in]: [1, 2, 3] }
+      spotId: { [Op.in]: [1, 2, 3,4,5,6,7,8] }
     }, {});
   }
 };
