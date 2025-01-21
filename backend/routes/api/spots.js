@@ -181,7 +181,14 @@ router.get('/', async (req, res) => {
         const spots = await Spot.findAll({
             where,
             limit: size,
-            offset: size * (page - 1)
+            offset: size * (page - 1),
+            include: [{
+                model: SpotImage,
+                as: 'spotImages',
+                attributes: ['url'],
+                where: { preview: true },
+                required: false
+              }],
         });
 
  // Format the spots to ensure numeric values
@@ -199,7 +206,7 @@ router.get('/', async (req, res) => {
     price: parseFloat(spot.price),
     createdAt: spot.createdAt,
     updatedAt: spot.updatedAt,
-    previewImage: spot.previewImage,
+    previewImage: spot.spotImages?.[0]?.url || null,  
     avgRating: spot.avgRating ? parseFloat(spot.avgRating) : null
 }));
 
@@ -294,7 +301,13 @@ router.post('/', requireAuth, validateSpotCreation, async (req, res) => {
         
         const spots = await Spot.findAll({
             where: { ownerId: currentUserId },
-            raw: true
+            include: [{
+                model: SpotImage,
+                as: 'spotImages',
+                attributes: ['url'],
+                where: { preview: true },
+                required: false
+            }]
         });
 
         // Format the spots to ensure numeric values
@@ -312,7 +325,7 @@ router.post('/', requireAuth, validateSpotCreation, async (req, res) => {
             price: parseFloat(spot.price),
             createdAt: spot.createdAt,
             updatedAt: spot.updatedAt,
-            previewImage: spot.previewImage,
+            previewImage: spot.spotImages?.[0]?.url || null,
             avgRating: spot.avgRating ? parseFloat(spot.avgRating) : null
         }));
 
