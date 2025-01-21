@@ -1,0 +1,18 @@
+.form-button {
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 40px;
+    background-color: #ff5a5f;
+    border: none;
+    color: white;
+  }
+  
+  .form-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .form-button:not(:disabled):hover {
+    background-color: #ff4146;
+  }

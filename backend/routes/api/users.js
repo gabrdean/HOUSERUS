@@ -34,11 +34,11 @@ const validateSignup = [
     .isLength({ min: 6 })
     .withMessage('Password must be 6 characters or more.'),
   check('firstName')
-    .isLength({ min: 3 })
-    .withMessage('Please provide a your full firstname'),
+    .isLength({ min: 4 })
+    .withMessage('Please provide a full firstname'),
   check('lastName')
-    .isLength({ min: 3 })
-    .withMessage('Please provide a your full lastname'),
+    .isLength({ min: 4 })
+    .withMessage('Please provide a full lastname'),
   handleValidationErrors
   
 ];

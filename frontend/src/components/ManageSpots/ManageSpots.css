@@ -1,0 +1,154 @@
+.manage-spots-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.manage-spots-title {
+    text-align: left;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.spots-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    padding: 16px;
+}
+
+@media (min-width: 640px) {
+    .spots-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .spots-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .spots-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.spot-card {
+    position: relative;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.spot-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.spot-image-container {
+    flex: 2;
+    position: relative;
+    padding-top: 66.67%;
+}
+
+.spot-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.spot-info {
+    padding: 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spot-name {
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80%;
+}
+
+.spot-location {
+    color: #666;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.spot-price {
+    font-weight: 500;
+    margin: 0;
+    font-size: 1.125rem;
+}
+
+.night {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.spot-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: auto;
+}
+
+.spot-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.update-button, .delete-button {
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+}
+
+.update-button {
+    background-color: #00635D;
+}
+
+.update-button:hover {
+    background-color: #004d47;
+}
+
+.delete-button {
+    background-color: #FF5A5F;
+}
+
+.delete-button:hover {
+    background-color: #FF385C;
+}
+
+#lowbutton{
+    background-color: #666;
+    color: white;
+    border-radius: 0px;
+}

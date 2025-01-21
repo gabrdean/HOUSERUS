@@ -1,0 +1,377 @@
+.spot-details-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    padding-inline: 5%;
+    padding-top: 1%;
+  }
+  
+  /* Header Styles */
+  h1.spot-name{
+    font-size: 32px;
+    font-weight: 600;
+    color: #222222;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+
+  .spot-location {
+    font-size: 14px;
+    color: #717171;
+    margin-bottom: 20px;
+  }
+
+  .placeholder {
+    opacity: 0.5;
+    transform: scale(0.7); /* Makes the image 70% of its container size */
+    transform-origin: center; /* Ensures scaling happens from the center */
+    object-fit: cover; /* Maintains aspect ratio */
+    display: block; /* Helps with centering */
+    margin: auto; /* Centers the image in its container */
+    
+  }
+  
+  /* Image Grid Styles */
+  .images-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-content: baseline;
+    gap: 20px;
+    height: 400px;
+   
+  }
+  
+  .preview-image {
+    flex: 1;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+  }
+  
+  .preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+  }
+  
+  .additional-images {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .small-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .small-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .additional-images .small-image:nth-child(2) img {
+    border-radius: 0 10px 0 0;
+  }
+  
+  .additional-images .small-image:nth-child(4) img {
+    border-radius: 0 0 10px 0;
+  }
+  
+  /* Content Layout */
+  .spot-main-content{
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    padding-top: 24px;
+  }
+
+  .spot-info{
+    flex:2;
+  }
+  
+  /* Host Section */
+  .host-info {
+   
+    padding-bottom: 24px;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 24px;
+  }
+  
+  .host-info h2 {
+    text-align: left;
+    font-size: 32px;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 8px;
+  }
+  
+  /* Description Section */
+  .spot-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222222;
+    margin-bottom: 32px;
+  }
+  
+  /* Booking Card Styles */
+  .booking-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+
+    margin-top: 1%;
+
+    height: 2000%;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    padding: 24px;
+  
+  
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: white;
+  }
+
+  .booking-card-content{
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .price-reviews{
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 4px;
+  }
+  .price-info {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 16px;
+  }
+  
+  .price {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .night{
+    font-weight:100;
+    font-size: 20px;
+    font-style: italic;
+  }
+  
+  .per-night {
+    font-size: 16px;
+    color: #717171;
+    margin-left: 4px;
+  }
+  
+  .rating-reviews {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+  
+  .rating-star {
+    color: #222222;
+  }
+  
+  .reserve-button {
+
+    width: 100%;
+    padding: 14px;
+    background-color: #FF385C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .reserve-button:hover {
+    background-color: #E31C5F;
+  }
+  
+  .reserve-button:disabled {
+    background-color: #dddddd;
+    cursor: not-allowed;
+  }
+  
+  /* Reviews Section */
+  .reviews-section {
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: 1px solid #dddddd;
+  }
+  
+  .reviews-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  
+  .reviews-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .reviews-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .review-card {
+    display: flex;
+
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .review-button {
+    background-color: #FF385C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+  }
+  
+  .review-button:hover {
+    background-color: #E31C5F;
+  }
+  
+  .review-header {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .reviewer-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .review-date {
+    font-size: 14px;
+    color: #717171;
+    margin: 0;
+  }
+  
+  .review-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #222222;
+    margin: 0;
+  }
+  
+  /* Loading State */
+  .loading-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-size: 18px;
+    color: #717171;
+  }
+  
+  /* Error State */
+  .error-state {
+    text-align: center;
+    color: #FF385C;
+    padding: 48px 0;
+  }
+
+  .delete-review-button {
+    
+    background-color: #585858;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+    width: 10%;
+  }
+  
+  .delete-review-button:hover {
+    background-color: #474747;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 950px) {
+    .spot-info-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .booking-card {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 12px 12px 0 0;
+      margin: 0;
+      z-index: 100;
+    }
+  
+    .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 744px) {
+    .images-grid {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+  
+    .preview-image img {
+      border-radius: 10px 10px 0 0;
+    }
+  
+    .additional-images {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .additional-images .small-image:nth-child(2) img {
+      border-radius: 0;
+    }
+  
+    .additional-images .small-image:last-child img {
+      border-radius: 0 0 10px 10px;
+    }
+  }
+  
+  @media (max-width: 550px) {
+    .spot-details-container {
+      padding: 16px;
+    }
+  
+    .spot-name {
+      font-size: 22px;
+    }
+  }
+

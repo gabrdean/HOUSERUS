@@ -1,0 +1,164 @@
+.create-spot-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header-container {
+  margin-bottom: 30px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.section {
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 24px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 8px;
+}
+
+.section-description {
+  font-size: 14px;
+  color: #717171;
+  margin-bottom: 16px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grid-2-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  margin-bottom: 4px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #222222;
+}
+
+.input-field.error {
+  border-color: #FF385C;
+}
+
+.textarea-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.textarea-field:focus {
+  outline: none;
+  border-color: #222222;
+}
+
+.textarea-field.error {
+  border-color: #FF385C;
+}
+
+.price-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.price-symbol {
+  font-size: 20px;
+  color: #222222;
+}
+
+.image-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.error-text {
+  color: #FF385C;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.error-message {
+  background-color: #FFF1F1;
+  border: 1px solid #FF385C;
+  color: #FF385C;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.button-container {
+  margin-top: 16px;
+}
+
+.create-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #FF385C;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.create-button:hover {
+  background-color: #E31C5F;
+}
+
+.create-button:disabled {
+  background-color: #dddddd;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .create-spot-container {
+    padding: 16px;
+  }
+
+  .grid-2-cols {
+    grid-template-columns: 1fr;
+  }
+}
